@@ -305,7 +305,7 @@ Choose a Race:
 	def printControls(self):
 		print(
 		"To ATTACK type: 'a' \n"
-		"To BLOCK type: 'b' \n"
+		"To BLOCK type: 'b' (Deals 20 percent of enemies damage) \n"
 		"To HEAL type: 'h' \n"
 		"To MOVE type: 'm' \n"
 		"SPECIAL ATTACK : 's' (Can only be used every 5 turns) \n"
@@ -344,7 +344,7 @@ Choose a Race:
 
 			else:
 				print("This number is greater than your allowed movement. Try again\n")
-		input()		
+		input()
 
 	def turn (self, enemy):
 		self.printStats()
@@ -375,7 +375,7 @@ Choose a Race:
 				break
 			elif decision == 's':
 				if self._turns % 5 == 0:
-					self.specialAttack()
+					self.specialAttack(enemy)
 					self._turns +=1
 					break
 				else:
