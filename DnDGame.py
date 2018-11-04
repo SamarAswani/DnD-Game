@@ -373,8 +373,9 @@ Choose a Race:
 				self.move ()
 				self._turns+=1
 				break
+
 			elif decision == 's':
-				if self._turns % 5 == 0:
+				if self._turns % 5 == 0 and self._turns > 0:
 					self.specialAttack(enemy)
 					self._turns +=1
 					break
