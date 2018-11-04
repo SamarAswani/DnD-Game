@@ -317,19 +317,23 @@ Choose a Race:
 			enemy.takeDamage(self.myClass._BasicAttack.getDamage())
 			self.successfulAttack()
 			print("Enemy Health is now,", enemy.getHealth(),"\n")
+			input()
 		else:
 			print("Enemy is out of range. Attack missed. \n")
+			input()
 
 	def specialAttack (self, enemy):
 		self.successfulSpecialAttack()
 		enemy.takeDamage(self._SpecialAttackDamage)
 		print("You have successfully used your Special Attack.")
 		print("Enemy Health is now,", enemy.getHealth(),"\n")
+		input()
 
 
 	def heal (self):
 		self._hp += self.myClass.getHealing()
 		print("Your health is now,", self._hp ,"\n")
+		input()
 
 	def move (self):
 		while True:
@@ -337,8 +341,10 @@ Choose a Race:
 			if blocks <= self._PlayerSpeed:
 				self._Position += blocks
 				break
+
 			else:
 				print("This number is greater than your allowed movement. Try again\n")
+		input()		
 
 	def turn (self, enemy):
 		self.printStats()
@@ -414,8 +420,10 @@ Choose a Race:
 		if enemy.getAttacked() == True:
 			self._hp += (round(0.2*enemy.getMonDamage()))
 			print("You have successfully blocked the enemy's attack!")
+			input()
 		else:
 			print("You have attempted to block but the enemy has not attacked. \n")
+			input()
 			pass
 
 
